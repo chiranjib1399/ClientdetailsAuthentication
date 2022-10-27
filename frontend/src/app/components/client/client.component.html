@@ -1,0 +1,32 @@
+<!-- <app-create-post (create)="createClient()"></app-create-post> -->
+
+
+
+<div *ngIf="toggle">
+  
+<mat-card *ngFor="let clientdata of clients$ | async">
+    <div class="post-title">
+      {{ clientdata.clientname }}
+    </div>
+    <div class="post-meta">
+      {{ clientdata.clientPhonenumber }}
+    </div>
+    <div class="post-body">
+      {{clientdata.address }}
+    </div>
+    <div class="post-body">
+      {{ clientdata.email }}
+    </div>
+  </mat-card>
+
+</div>
+<!-- <button (click)="toggleData()" mat-raised-button  color="Green">Hide </button> -->
+
+<div *ngIf="show else hide">
+  <button (click)="toggleData()" mat-raised-button  color="Green">Show </button>
+</div>
+
+<ng-template #hide><button (click)="toggleData()" mat-raised-button  color="Green">Hide </button></ng-template>
+
+
+

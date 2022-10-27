@@ -1,0 +1,44 @@
+<button (click)="isOpen = !isOpen" mat-raised-button color="accent">
+    <mat-icon>add</mat-icon>Add Clientbilll
+  </button>
+  <form
+    *ngIf="isOpen"
+    [formGroup]="form"
+    #formDirective="ngForm"
+    (ngSubmit)="onSubmit(form.value)"
+    novalidate
+  >
+    
+    <mat-form-field>
+      <mat-label>Client name</mat-label>
+      <input matInput formControlName="clientname" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Total Amount</mat-label>
+      <input matInput formControlName="Totalamount" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Pending Amount</mat-label>
+      <input matInput formControlName="Pending" />
+    </mat-form-field>
+    <button
+      color="accent"
+      [disabled]="!form.valid"
+      mat-raised-button
+      type="submit"
+    >
+      <span>Add</span>
+    </button>
+  </form>
+
+  <mat-card *ngFor="let clientbil of clientbills | async">
+    <div class="post-meta"> <span>Client Name -</span>
+      {{ clientbil.clientname }}
+    </div>
+    <div class="post-body"> <span>Total Bill -</span>
+      {{clientbil.Totalamount }}
+    </div>
+    <div class="post-body"> <span>Pending Bill -</span>
+      {{ clientbil.Pending }}
+    </div>
+  </mat-card>

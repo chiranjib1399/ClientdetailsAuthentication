@@ -1,0 +1,35 @@
+<button (click)="isOpen = !isOpen" mat-raised-button color="accent">
+    <mat-icon>add</mat-icon>Add Partner
+  </button>
+  <form
+    *ngIf="isOpen"
+    [formGroup]="form"
+    #formDirective="ngForm"
+    (ngSubmit)="onSubmit(form.value)"
+    novalidate
+  >
+    <mat-form-field>
+      <mat-label>MarketingPartner Company Name</mat-label>
+      <input matInput formControlName="companyname" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Tenure</mat-label>
+      <input matInput formControlName="tenure" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Sponsorship</mat-label>
+      <input matInput formControlName="sponsorship" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Partner Email</mat-label>
+      <input matInput formControlName="email" />
+    </mat-form-field>
+    <button
+      color="accent"
+      [disabled]="!form.valid"
+      mat-raised-button
+      type="submit"
+    >
+      <span>Add</span>
+    </button>
+  </form>

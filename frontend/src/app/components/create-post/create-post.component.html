@@ -1,0 +1,35 @@
+<button (click)="isOpen = !isOpen" mat-raised-button color="accent">
+  <mat-icon>add</mat-icon>Add Client
+</button>
+<form
+  *ngIf="isOpen"
+  [formGroup]="form"
+  #formDirective="ngForm"
+  (ngSubmit)="onSubmit(form.value)"
+  novalidate
+>
+  <mat-form-field>
+    <mat-label>Client Name</mat-label>
+    <input matInput formControlName="clientname" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Client PhoneNumber</mat-label>
+    <input matInput formControlName="clientPhonenumber" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Address</mat-label>
+    <input matInput formControlName="address" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email" />
+  </mat-form-field>
+  <button
+    color="accent"
+    [disabled]="!form.valid"
+    mat-raised-button
+    type="submit"
+  >
+    <span>Add</span>
+  </button>
+</form>

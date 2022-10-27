@@ -1,0 +1,53 @@
+<mat-toolbar color="accent">
+  
+  
+  <span>
+    <a routerLinkActive="active-link"
+    routerLink="/marketingpartners" >
+      <span>MarketingPartners</span>
+  </a>
+
+
+  <a routerLinkActive="active-link"
+  routerLink="/marketingpartnerlist" >
+    <span>Marketingpartnerlists</span>
+</a>
+
+
+  <a routerLinkActive="active-link"
+  routerLink="/postclient" >
+    <span>PostClientDetails</span>
+</a>
+<a routerLinkActive="active-link"
+  routerLink="/billing" >
+    <span>Billing</span>
+</a>
+<a routerLinkActive="active-link"
+routerLink="/clientdetails" >
+  <span>ClientDetails</span>
+</a>
+
+    <a
+      *ngIf="!isAuthenticated"
+      routerLinkActive="active-link"
+      routerLink="/login"
+    >
+      <span>Login</span>
+    </a>
+    <a
+      *ngIf="isAuthenticated"
+      (click)="logout()"
+      routerLinkActive="active-link"
+      routerLink="/login"
+    >
+      <span>Logout</span>
+    </a>
+    <a
+      *ngIf="!isAuthenticated"
+      routerLinkActive="active-link"
+      routerLink="/signup"
+    >
+      <span>Signup</span>
+    </a>
+  </span>
+</mat-toolbar>

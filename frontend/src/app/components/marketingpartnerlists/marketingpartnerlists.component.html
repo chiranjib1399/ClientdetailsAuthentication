@@ -1,0 +1,16 @@
+  
+<mat-card *ngFor="let newpartner of markrtingpartners$ | async">
+    <div class="post-title">
+      {{ newpartner.companyname }}
+    </div>
+    <div class="post-meta">
+      {{ newpartner.tenure }}
+    </div>
+    <div class="post-body">
+      {{newpartner.sponsorship }}
+    </div>
+    <div class="post-body">
+      {{ newpartner.email }}
+    </div>
+  </mat-card>
+
