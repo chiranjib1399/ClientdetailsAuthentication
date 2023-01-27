@@ -26,6 +26,7 @@ if (req.method === 'OPTIONS') {
   }
 next();
 });
+
 app.use('/auth', authRoutes);
 app.use('/clientdetails', clientdetailsRoutes);
 app.use('/marketingpartner',marketingpaertnerRoutes);

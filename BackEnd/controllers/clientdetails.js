@@ -13,7 +13,7 @@ try {
     }
     next(error)
 }
-}
+} 
  
 exports.postClient = async (req,res,next)=>{
     const errors = validationResult(req);

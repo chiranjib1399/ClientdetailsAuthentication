@@ -5,7 +5,6 @@ module.exports = class Clientdetails{
         this.clientname=clientname;
         this.Totalamount=Totalamount;
         this.Pending=Pending;
-        
     };
      
   static fetchAll(){

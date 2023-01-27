@@ -42,6 +42,7 @@ export class CreatePostComponent implements OnInit {
       clientPhonenumber: new FormControl("",[Validators.required, Validators.minLength(10)]),
       address: new FormControl("",[Validators.required, Validators.minLength(10)]),
       email: new FormControl("",[Validators.required, Validators.email])
+      
     });
   }
 
